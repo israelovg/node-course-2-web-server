@@ -1,5 +1,6 @@
 ﻿const fs = require('fs');
 const express = require('express');
+const port = process.env.PORT || 3000;
 var app = express();
 const hbs = require('hbs'); //hbs is html template rendering like in php 
 app.set('view engine', 'hbs'); //tells to express what html rendering to use
@@ -78,4 +79,6 @@ app.get('/bad',
     (req, res) => {
         res.send({ errorMessage: 'Unable to fullfill the request!' });
     });
-app.listen(3000);
+app.listen(port,() => {
+    console.log(`Server set up on port ${port}`);
+});
