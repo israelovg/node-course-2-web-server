@@ -19,13 +19,13 @@ app.use((req, res, next) => {
     next(); // next say to express go forward 
 });
 //this express middleware will return maintenance.hbs for all requests
-app.use((req, res, next) => {
-    res.render('maintenance.hbs',
-        {
-            pageTitle: 'Maintenance Page',
-            currentYear: new Date().getFullYear()
-        });
-});
+//app.use((req, res, next) => {
+//    res.render('maintenance.hbs',
+//        {
+//            pageTitle: 'Maintenance Page',
+//            currentYear: new Date().getFullYear()
+//        });
+//});
 //register helper , we can use it as method in template
 hbs.registerHelper('getCurrentYear',
     () => {
